@@ -5,6 +5,6 @@
 int main() {
 
     MySingleton::getInstance().hello();
-
     return 0;
+
 }
