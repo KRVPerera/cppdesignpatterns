@@ -7,7 +7,7 @@ set(INCLUDE_DIR include)
 set(SRC_DIR src)
 
 set(HEADER_FILES ${INCLUDE_DIR}/MySingleton.h)
-set(SOURCE_FILES main.cpp ${SRC_DIR}/MySingleton.cpp)
+set(SOURCE_FILES main.cpp ${SRC_DIR}/MySingleton.cpp src/IStrategy.cpp include/IStrategy.h)
 
 include_directories(${INCLUDE_DIR})
 
