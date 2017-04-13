@@ -24,7 +24,9 @@ public:
 class IStrategyImplementedC11 {
 public:
     using Action = std::function<void()>;
+
     IStrategyImplementedC11(Action action);
+
     void performAction() {
         _action();
     }
@@ -37,6 +39,17 @@ struct SuperAction {
     void operator()() {
         std::cout << "This is superaction being performed" << std::endl;
     }
+};
+
+template<class T>
+class CActionContext {
+public:
+    void performAction() {
+        _templateAction.performAction();
+    };
+
+protected:
+    T _templateAction;
 };
 
 #endif //CPPDESIGNPATTERNS_ISTRATEGY_H

@@ -8,7 +8,7 @@ int main() {
     //singleton
     MySingleton::getInstance().hello();
 
-    // strategy pattern
+    // strategy pattern stripped out
     IStrategy * ss = new CStrategy_1();
     ss->performAction();
 
@@ -16,6 +16,9 @@ int main() {
     SuperAction sa;
     IStrategyImplementedC11 aa(sa);
     aa.performAction();
+
+    CActionContext<CStrategy_1> tempContext;
+    tempContext.performAction();
 
     return 0;
 
