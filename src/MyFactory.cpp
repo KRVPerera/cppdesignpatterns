@@ -8,6 +8,8 @@ Document::Document(std::string fn) {
     name = fn;
 }
 
+Document::~Document() {}
+
 std::string Document::getName() {
     return name;
 }
@@ -24,6 +26,8 @@ Application::Application() {
     std::cout << "Framework app ctor" << std::endl;
 }
 
+Application::~Application() {}
+
 void Application::NewDocument(std::string name) {
     std::cout << "MyFactory::NewDocument(" << name << ")" << std::endl;
     Document * doc = CreateDocument(name);
@@ -33,7 +37,7 @@ void Application::NewDocument(std::string name) {
 
 void Application::ReportDocs() {
     std::cout << "Application: ReportDocs()" << std::endl;
-    for (int i = 0; i < docs.size(); ++i) {
+    for (unsigned long i = 0; i < docs.size(); ++i) {
         std::cout << "   " << docs[i]->getName() << std::endl;
     }
 }
@@ -41,3 +45,5 @@ void Application::ReportDocs() {
 MyFactory::MyFactory(){
     std::cout << std::endl << "******** My Factory started ********" << std::endl;
 }
+
+MyFactory::~MyFactory() {}

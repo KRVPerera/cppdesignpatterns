@@ -3,9 +3,9 @@
 //
 
 #include "MySingleton.h"
+#include <iostream>
 
 void MySingleton::hello() {
 
-    std::cout << "Hello, World!" << std::endl;
-
+    std::cout << "Singleton says hello, World!" << std::endl;
 }

@@ -12,13 +12,12 @@
 class IStrategy {
 public:
     virtual void performAction() = 0;
-
-    virtual ~IStrategy() = default;
+    virtual ~IStrategy();
 };
 
 class CStrategy_1 : public IStrategy {
 public:
-    virtual void performAction();
+    virtual void performAction() override;
 };
 
 class IStrategyImplementedC11 {
@@ -46,7 +45,7 @@ class CActionContext {
 public:
     void performAction() {
         _templateAction.performAction();
-    };
+    }
 
 protected:
     T _templateAction;

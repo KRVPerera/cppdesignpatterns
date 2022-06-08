@@ -5,8 +5,6 @@
 #ifndef CPPDESIGNPATTERNS_MYSINGLETON_H
 #define CPPDESIGNPATTERNS_MYSINGLETON_H
 
-#include <iostream>
-
 // Singleton Design Pattern
 class MySingleton {
 public:
@@ -21,16 +19,13 @@ public:
 private:
     MySingleton() {}
 
-    // c++ 03
-    // Stop the compiler generating methods of copy the object
-    // S(S const&);              // Don't Implement.
-    // void operator=(S const&); // Don't implement
-
     // c++ 11
 public:
     // Stop the compiler generating methods of copy the object
-    MySingleton(MySingleton const &) = delete;
+    MySingleton(MySingleton const &) = delete; // c
     void operator=(MySingleton const &) = delete;
+    MySingleton(MySingleton &&) = delete;
+    MySingleton & operator=(MySingleton &&) = delete;
 };
 
 

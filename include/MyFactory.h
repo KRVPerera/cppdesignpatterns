@@ -12,6 +12,7 @@
 class Document {
 public:
     Document(std::string fn);
+    virtual ~Document();
 
     // by the framework
     virtual void Open() = 0;
@@ -35,6 +36,7 @@ public:
 class Application {
 public:
     Application();
+    virtual ~Application();
 
     void NewDocument(std::string name);
 
@@ -50,8 +52,9 @@ class MyFactory : public Application {
 
 public:
     MyFactory();
+    virtual ~MyFactory() override;
 
-    Document * CreateDocument(std::string name){
+    Document * CreateDocument(std::string name) override {
         std::cout << "My implemented custom doc creation" << std::endl;
         return new MyTestDocument(name);
     }

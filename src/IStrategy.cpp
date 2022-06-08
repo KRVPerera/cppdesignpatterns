@@ -4,6 +4,11 @@
 
 #include "IStrategy.h"
 
+
+IStrategy::~IStrategy() {
+
+}
+
 void CStrategy_1::performAction() {
     std::cout << "Strategy 1 performing action" << std::endl;
 }
